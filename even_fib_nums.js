@@ -7,16 +7,16 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
-  var prev = 1;
-  var next = 1;
-  var fibNum = 0;
+  var prev = 1; //f(n-2)
+  var next = 1; //f(n-1)
+  var fibNum = 0; //fn
   while(fibNum <= maxFibValue) {
   	prev = next;
   	if(fibNum % 2 === 0) {
   		sum += fibNum;
   	}
   	next = fibNum;
-  	fibNum = next + prev;
+  	fibNum = next + prev; //fn = f(n-1) + f(n-2)
   }
 
   return sum;
@@ -26,20 +26,18 @@ function _sumFibs( maxFibValue ) {
 function _highestFibonacciNumber (maxFibValue){
   var highest = 0;
 
-  var prev = 1;
-  var next = 1;
-  var fibNum = 0;
-  while(fibNum < maxFibValue) {
+  var prev = 1; //f(n-2)
+  var next = 1; //f(n-1)
+  var fibNum = 0; //fn
+  while(fibNum <= maxFibValue) {
   	prev = next;
   	next = fibNum;
-  	fibNum = next + prev;
+  	fibNum = next + prev; //fn = f(n-1) + f(n-2)
   }
-  highest = next;
+  highest = next; //highest = f(n-1)
 
   return highest;
 }
-
-console.log(_highestFibonacciNumber(100));
 
 /**
  * Do not modify code below.
